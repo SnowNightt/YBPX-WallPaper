@@ -1,0 +1,12 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+.nodrag {
+  -webkit-app-region: no-drag;
+}
