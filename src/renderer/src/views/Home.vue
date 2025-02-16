@@ -5,7 +5,7 @@
                 class="select-none object-cover w-[1080px]" draggable="false">
         </div>
         <div class="switch relative h-[48px]">
-            <div class="text-center py-3 my-4 mx-6 rounded-md btn w-1/2 absolute left-1/2 -translate-x-1/2 text-2xl" @click="setWallPaper">设置背景</div>
+            <div class="text-center py-3 my-4 mx-6 rounded-md btn w-1/2 absolute left-1/2 -translate-x-1/2 text-2xl" @click="setWallPaper">设置壁纸</div>
         </div>
         <footer class="flex justify-between px-[250px] text-xl footer mt-8">
             <div class="left cursor-pointer" @click="downLoadImage">下载壁纸</div>

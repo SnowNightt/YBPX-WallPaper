@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import Input from './Input.vue';
-import { Config, Home, AllApplication, Star, Power, Avatar,BookmarkOne } from '@icon-park/vue-next';
+import { Home, AllApplication, Star, Power, Avatar,BookmarkOne } from '@icon-park/vue-next';
 const quit = () => {
     window.api.quit()
 }

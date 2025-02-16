@@ -10,7 +10,7 @@ function createWindow(): void {
     width: 1640, // 400 500
     height: 1000, // 390 500
     frame: false,
-    resizable: false,
+    resizable: true,
     maximizable: false,
     alwaysOnTop: false,
     show: false,
@@ -26,12 +26,14 @@ function createWindow(): void {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
-
+  // 监听窗口最小化
+  ipcMain.on('minimize-window', (_event) => {
+    mainWindow.minimize()
+  })
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }
   })
-
 
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
@@ -56,15 +58,12 @@ app.whenReady().then(() => {
   createWindow()
 
   app.on('activate', function () {
-
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
-
