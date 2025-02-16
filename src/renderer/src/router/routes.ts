@@ -18,6 +18,26 @@ const routes = [
     path: '/like',
     name: 'like',
     component: () => import('@renderer/views/Like.vue')
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import('@renderer/views/User.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@renderer/views/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('@renderer/views/Register.vue')
+  },
+  {
+    path: '/sort',
+    name: 'sort',
+    component: () => import('@renderer/views/Sort.vue')
   }
 ]
 export default routes

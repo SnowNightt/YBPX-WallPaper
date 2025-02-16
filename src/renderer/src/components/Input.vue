@@ -24,8 +24,8 @@ const searchImages = async () => {
 <style lang="scss" scoped>
 .input {
     position: relative;
-    width: 150px;
-    height: 20px;
+    width: 350px;
+    height: 30px;
     box-sizing: border-box;
 
     input {
@@ -33,8 +33,8 @@ const searchImages = async () => {
         font-size: 12px;
         color: #868e96;
         padding: 5px;
-        height: 20px;
-        width: 150px;
+        height: 30px;
+        width: 350px;
         outline: none;
         padding-inline: none;
         border: 1.5px solid #adb5bd;

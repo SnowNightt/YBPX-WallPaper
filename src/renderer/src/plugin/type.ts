@@ -22,3 +22,14 @@ export interface ResDataType {
   status: number
   statusText: string
 }
+export interface ILoginMessage {
+  username: string
+  password: string
+}
+export interface ICollectImage {
+  wallpaperName: string
+  userId: number
+}
+export interface IUserId {
+  userId: number
+}

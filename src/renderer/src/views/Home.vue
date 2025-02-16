@@ -1,11 +1,13 @@
 <template>
-    <div class="home-container">
-        <div class="img-container h-80">
+    <div class="home-container flex-1 ">
+        <div class="img-container h-[711px] w-full flex justify-center">
             <img @click="change" ref="img" :src="useConfig.config.url" alt="网络错误"
-                class="select-none object-cover w-full h-full" draggable="false">
+                class="select-none object-cover w-[1080px]" draggable="false">
         </div>
-        <div class="text-center py-3 my-4 mx-6 rounded-md btn" @click="setWallPaper">设置背景</div>
-        <footer class="flex justify-between px-6 text-sm footer">
+        <div class="switch relative h-[48px]">
+            <div class="text-center py-3 my-4 mx-6 rounded-md btn w-1/2 absolute left-1/2 -translate-x-1/2 text-2xl" @click="setWallPaper">设置背景</div>
+        </div>
+        <footer class="flex justify-between px-[250px] text-xl footer mt-8">
             <div class="left cursor-pointer" @click="downLoadImage">下载壁纸</div>
             <div class="right cursor-pointer"><a href="https://space.bilibili.com/50992816" target="_blank">联系我</a>
             </div>

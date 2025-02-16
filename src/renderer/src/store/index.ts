@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 import { configType } from './type'
 import { ref } from 'vue'
-
 export default defineStore(
   'config',
   () => {
@@ -15,6 +14,7 @@ export default defineStore(
       currentPage: 1,
       total: 0
     })
+
     return { config }
   },
   {

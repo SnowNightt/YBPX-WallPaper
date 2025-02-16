@@ -9,7 +9,7 @@ import 'element-plus/dist/index.css'
 import Lazyload from "vue3-lazyload";
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-
+import './permission'
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 const app = createApp(App)

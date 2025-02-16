@@ -3,15 +3,20 @@ export interface dataType {
   fileName?: string
   created_at?: any
   updatedAt?: any
-  description?:string
+  description?: string
+  wallpaper?:string
 }
 export interface configType {
   url: string
   imageSaveDirectory: string
   likeList: dataType[]
-  homeImageUrl:string
-  searchImages:dataType[]
-  key:string
-  currentPage:number
-  total:number
+  homeImageUrl: string
+  searchImages: dataType[]
+  key: string
+  currentPage: number
+  total: number
+}
+export interface IUserInfo {
+  username: string
+  id: string
 }

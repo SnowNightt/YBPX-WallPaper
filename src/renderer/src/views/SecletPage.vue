@@ -1,5 +1,5 @@
 <template>
-    <main class="box-border px-4 py-2 ">
+    <main class="box-border px-8 py-2">
         <ImageList :data="data" />
         <Pagination :currentPage="config.currentPage" :pageSize="config.pageSize" :isSmall="config.isSmall"
             :isDisabel="config.isDisabel" :isBackground="config.isBackground" :total="config.total"

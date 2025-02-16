@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.vue';
 
 <template>
   <Suspense>
-    <main class="w-screen h-screen">
+    <main class="box-border w-screen h-screen flex flex-col overflow-x-hidden">
       <Navbar />
       <router-view></router-view>
     </main>
