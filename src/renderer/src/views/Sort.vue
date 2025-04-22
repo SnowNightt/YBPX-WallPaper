@@ -1,5 +1,5 @@
 <template>
-    <main class="box-border px-8 py-2 flex">
+    <main class="box-border pl-8 py-2 flex">
         <div class="left">
             <div class="sort-nav mr-6">
                 <!-- 山 -->
@@ -64,7 +64,7 @@ const searchImages = async () => {
     configStore.config.currentPage = 1
     const res = await reqSearchImages(configStore.config.key, configStore.config.currentPage)
     console.log(res);
-    
+
     if (res.status == 201) {
         configStore.config.searchImages = res.data.data
         configStore.config.total = res.data.meta.total
@@ -103,6 +103,11 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
+.right {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .iconColor {
     color: #b197fc;
 }

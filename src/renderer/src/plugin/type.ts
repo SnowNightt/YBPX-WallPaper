@@ -33,3 +33,10 @@ export interface ICollectImage {
 export interface IUserId {
   userId: number
 }
+export interface IUserInfo {
+  username: string
+  qqAccount?: string
+  wechat?: string
+  email?: string
+  nickname?: string
+}

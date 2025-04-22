@@ -28,7 +28,6 @@ export default () => {
     const state = await window.api.existsPath(useConfig.config.imageSaveDirectory)
     if (!state) {
       ElMessage.error('设置的保存路径无效')
-      console.log(router)
       return router.push({ name: 'setting' })
     }
     window.api.setWallPaper(url, useConfig.config.imageSaveDirectory)

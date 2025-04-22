@@ -30,6 +30,12 @@ function createWindow(): void {
   ipcMain.on('minimize-window', (_event) => {
     mainWindow.minimize()
   })
+  // 监听 logout事件并转发给渲染进程
+  ipcMain.on('logout', (_event) => {
+    if (mainWindow) {
+      mainWindow.webContents.send('logout')
+    }
+  })
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }

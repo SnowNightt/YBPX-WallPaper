@@ -12,7 +12,9 @@ export default defineStore(
       searchImages: [],
       key: '',
       currentPage: 1,
-      total: 0
+      total: 0,
+      email: '',
+      theme:'pinkTheme'
     })
 
     return { config }

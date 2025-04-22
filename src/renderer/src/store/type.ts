@@ -14,7 +14,9 @@ export interface configType {
   searchImages: dataType[]
   key: string
   currentPage: number
-  total: number
+  total: number,
+  email?:string,
+  theme?:string
 }
 export interface IUserInfo {
   username: string

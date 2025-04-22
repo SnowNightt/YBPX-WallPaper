@@ -1,5 +1,5 @@
 import http from './axios'
-import { ResDataType, ILoginMessage, ICollectImage, IUserId } from './type'
+import { ResDataType, ILoginMessage, ICollectImage, IUserId, IUserInfo } from './type'
 export const reqImageList = async (page: number): Promise<ResDataType> => {
   return await http.get(`image/imagelist?page=${page}`)
 }
@@ -24,4 +24,12 @@ export const uncollectImage = async (param: ICollectImage) => {
 // 获取收藏的壁纸
 export const getCollectImage = async (param: IUserId) => {
   return await http.get('/image/favorites', { params: param })
+}
+// 修改密码
+export const changePassword = async (param: ILoginMessage) => {
+  return await http.post('/auth/changepassword', param)
+}
+// 设置个人信息
+export const setUserInfoReq = async (param : IUserInfo) => {
+  return await http.post('/auth/setInfo',param)
 }

@@ -1,6 +1,9 @@
 <template>
     <div class="register-container">
-        <form @submit.prevent="handleRegister">
+        <div class="img">
+            <img src="../public/2.jpg" alt="">
+        </div>
+        <form @submit.prevent="handleRegister" class="form">
             <h2>注册</h2>
             <div class="form-group">
                 <label for="username">用户名：</label>
@@ -13,8 +16,11 @@
                 <span v-if="errors.password" class="error">{{ errors.password }}</span>
             </div>
             <button type="submit" :disabled="loading">注册</button>
-            <p v-if="registerError" class="error">{{ registerError }}</p>
-            <p>已有账号，<span class="cursor-pointer" style="color: skyblue;" @click="router.push({name:'login'})">点击登录</span></p>
+            <div class="tips">
+                <p v-if="registerError" class="error">{{ registerError }}</p>
+                <p>已有账号，<span class="cursor-pointer" style="color: skyblue;"
+                        @click="router.push({ name: 'login' })">点击登录</span></p>
+            </div>
         </form>
     </div>
 </template>
@@ -81,9 +87,8 @@ body {
 }
 
 .register-container {
-    max-width: 420px;
+    max-width: 1000px;
     width: 100%;
-    padding: 30px 25px;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -95,21 +100,28 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: flex;
 
     &:hover {
         transform: scale(1.02) translate(-50%, -50%);
     }
 
+    .form {
+        flex: 1;
+        padding: 30px 20px;
+    }
+
     h2 {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         color: $primary-color;
-        font-size: 24px;
+        font-size: 34px;
         font-weight: bold;
         position: relative;
 
         &:after {
             content: "";
-            width: 50px;
+            width: 68px;
             height: 4px;
             background: $primary-color;
             position: absolute;
@@ -121,15 +133,18 @@ body {
     }
 
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         text-align: left;
+        display: flex;
 
         label {
             font-size: 14px;
             font-weight: 600;
             color: #333;
             margin-bottom: 8px;
-            display: block;
+            display: flex;
+            align-items: center;
+            width: 80px;
         }
 
         input {
@@ -167,6 +182,7 @@ body {
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.3s ease;
+        margin-top: 20px;
 
         &:hover {
             background: darken($primary-color, 10%);
@@ -179,6 +195,10 @@ body {
             cursor: not-allowed;
             transform: none;
         }
+    }
+
+    .tips {
+        margin-top: 40px;
     }
 
     .error {

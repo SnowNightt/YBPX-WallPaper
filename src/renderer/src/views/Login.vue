@@ -1,6 +1,9 @@
 <template>
     <div class="login-container">
-        <form @submit.prevent="handleLogin">
+        <div class="img">
+            <img src="../public/1.jpg" alt="">
+        </div>
+        <form @submit.prevent="handleLogin" class="form">
             <h2>登录</h2>
             <div class="form-group">
                 <label for="username">用户名：</label>
@@ -13,8 +16,12 @@
                 <span v-if="errors.password" class="error">{{ errors.password }}</span>
             </div>
             <button type="submit" :disabled="loading">登录</button>
-            <p v-if="loginError" class="error">{{ loginError }}</p>
-            <p class="text-center">没有账号？<span class="cursor-pointer" style="color: skyblue;" @click="toRegister">点击注册</span></p>
+            <div class="tips">
+                <p v-if="loginError" class="error">{{ loginError }}</p>
+                <p class="text-center">没有账号？<span class="cursor-pointer" style="color: skyblue;"
+                        @click="toRegister">点击注册</span></p>
+            </div>
+
         </form>
     </div>
 </template>
@@ -60,12 +67,12 @@ const handleLogin = async () => {
         const { status, data } = await authLogin(form)
         if (status === 200) {
             setToken(data.token)
+            localStorage.setItem('username',form.username)
             user.username = data.username
             user.id = data.id
-            setLocalStorage('userId',user.id)
+            setLocalStorage('userId', user.id)
             router.push({ name: 'home' })
         }
-        console.log(res);
     } catch (error) {
         loginError.value = error.message;
     } finally {
@@ -95,8 +102,7 @@ body {
 
 .login-container {
     width: 100%;
-    max-width: 400px;
-    padding: 30px 20px;
+    max-width: 1000px;
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -106,27 +112,50 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: flex;
 
     &:hover {
         transform: scale(1.02) translate(-50%, -50%);
     }
 
+    .form {
+        flex: 1;
+        padding: 30px 20px;
+    }
+
     h2 {
         text-align: center;
-        font-size: 24px;
+        font-size: 34px;
         font-weight: bold;
         color: $primary-color;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        &:after {
+            content: "";
+            width: 68px;
+            height: 4px;
+            background: $primary-color;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+            border-radius: 2px;
+        }
     }
 
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        display: flex;
 
         label {
-            display: block;
+            display: flex;
+            align-items: center;
             margin-bottom: 8px;
             font-weight: bold;
             color: #555;
+            width: 80px;
+
         }
 
         input {
@@ -162,6 +191,7 @@ body {
         color: #fff;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        margin-top: 20px;
 
         &:hover {
             background: darken($primary-color, 10%);
@@ -172,6 +202,10 @@ body {
             background: lighten($primary-color, 20%);
             cursor: not-allowed;
         }
+    }
+
+    .tips {
+        margin-top: 40px;
     }
 
     .error {

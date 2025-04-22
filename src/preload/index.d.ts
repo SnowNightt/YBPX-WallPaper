@@ -7,6 +7,7 @@ declare global {
     setImageSaveDirectory: () => Promise<string>
     existsPath: (path: string) => Promise<boolean>
     quit: () => void
+    miniSize: () => void
   }
   interface Window {
     electron: ElectronAPI

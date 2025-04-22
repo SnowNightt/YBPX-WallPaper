@@ -17,9 +17,17 @@ const api = {
   },
   quit: () => {
     ipcRenderer.send('quit')
+  },
+  miniSize: () => {
+    ipcRenderer.send('minimize-window')
   }
 }
-
+const logout = {
+  ipcRenderer: {
+    send: (channel:any, data:any) => ipcRenderer.send(channel, data),
+    on: (channel:any, func:any) => ipcRenderer.on(channel, (_event, ...args) => func(...args))
+  }
+}
 // Use `contextBridge` APIs to expose Electron APIs to
 // renderer only if context isolation is enabled, otherwise
 // just add to the DOM global.
@@ -27,6 +35,7 @@ if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('electron', electronAPI)
     contextBridge.exposeInMainWorld('api', api)
+    contextBridge.exposeInMainWorld('logout', logout)
   } catch (error) {
     console.error(error)
   }
