@@ -58,7 +58,7 @@ export default {
 
         const openai = new OpenAI({
             baseURL: 'https://api.deepseek.com',
-            apiKey: 'sk-7139298919814474a08443a9fd33eb3e',
+            apiKey: 'your APIKey',
             dangerouslyAllowBrowser: true
         });
         // async function sendMessage() {
