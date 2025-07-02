@@ -61,7 +61,7 @@ const router = useRouter()
 const useConfig = useConfigStore()
 const password = ref<string>('')
 // 当前选中的主题
-const selectTheme = ref<string>(localStorage.getItem('theme') || 'pinkTheme')
+const selectTheme = ref<string>(localStorage.getItem('theme') || 'blueTheme')
 // 主题列表
 const themeList = ref([
     {

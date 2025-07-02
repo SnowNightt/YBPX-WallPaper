@@ -14,7 +14,7 @@ export default defineStore(
       currentPage: 1,
       total: 0,
       email: '',
-      theme:'pinkTheme'
+      theme:'blueTheme'
     })
 
     return { config }

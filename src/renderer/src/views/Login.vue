@@ -67,7 +67,7 @@ const handleLogin = async () => {
         const { status, data } = await authLogin(form)
         if (status === 200) {
             setToken(data.token)
-            localStorage.setItem('username',form.username)
+            localStorage.setItem('username', form.username)
             user.username = data.username
             user.id = data.id
             setLocalStorage('userId', user.id)
@@ -101,6 +101,7 @@ body {
 }
 
 .login-container {
+    height: auto !important;
     width: 100%;
     max-width: 1000px;
     border-radius: 12px;
@@ -131,6 +132,7 @@ body {
         color: $primary-color;
         margin-bottom: 40px;
         position: relative;
+
         &:after {
             content: "";
             width: 68px;

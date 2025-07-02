@@ -2,7 +2,7 @@
     <div class="wall-paper-list grid grid-rows-3 grid-cols-3 gap-8">
         <div class="wall-paper-item cursor-pointer" v-for="item in data" :key="item.id">
             <img v-lazy="url + item.fileName" class="w-full h-full object-cover select-none" draggable="false"
-                @click="showImgDetail(item.fileName as string)" ref="wallpaper" alt="error">
+                @click="showImgDetail(item)" ref="wallpaper" alt="error">
             <like theme="outline" size="30" fill="#000" :strokeWidth="2" class="icon" @click="setLike(item)" />
             <like theme="multi-color" size="30" :fill="['#212529', '#f03e3e', '#FFF', '#43CCF8']" :strokeWidth="2"
                 class="icon" v-show="useConfig.config.likeList.some((ite) => item.fileName == ite.fileName)"
@@ -10,7 +10,6 @@
         </div>
     </div>
     <el-drawer v-model="drawer" title="壁纸详情">
-
         <div class="img-detail">
             <div class="img-box w-full h-72 relative ">
                 <img v-lazy="url + fileName" class="w-full h-72 object-cover shadow-md select-none rounded-t-xl "
@@ -23,6 +22,9 @@
             </div>
             <div class="p-4">
                 <h2 class="title">标题</h2>
+                <el-tag type="danger" effect="light" style="margin-top: 6px;">
+                    {{ wallpaperDetail.description==='人'?'动漫':wallpaperDetail.description }}
+                </el-tag>
                 <p class="mt-2 text-gray-600">分辨率：{{ wallpaperDetail.width }} x {{ wallpaperDetail.height }}</p>
                 <p class="mt-1 text-gray-600">壁纸大小：{{ wallpaperDetail.memorySizeMB || 1 }} MB</p>
                 <p class="mt-1 text-gray-600">来源：网络</p>
@@ -72,7 +74,8 @@ const isShowSetBtn = ref<Boolean>(true)
 const wallpaperDetail = reactive({
     memorySizeMB: 0,
     width: 0,
-    height: 0
+    height: 0,
+    description: ''
 })
 const handleScaleImage = (event: MouseEvent) => {
     isShowSetBtn.value = false
@@ -116,9 +119,11 @@ const setWallPaper = () => {
     }
     allPageSetWallPaper(url + fileName.value)
 }
-const showImgDetail = (filename: string) => {
+const showImgDetail = (file: dataType) => {
+    console.log(12, file);
+    wallpaperDetail.description = file.description!
     drawer.value = true
-    fileName.value = filename
+    fileName.value = file.fileName!
 }
 const userId = getLocalStorage('userId')
 // 爱心点击事件
@@ -197,7 +202,7 @@ const setDisLike = async (item: dataType) => {
     width: 100%;
     height: 288px;
     position: absolute;
-    top: 152%;
+    top: 164%;
     left: 1px;
     border: 1px solid #aaa;
     overflow: hidden;
@@ -241,6 +246,7 @@ const setDisLike = async (item: dataType) => {
 
 .tips {
     margin-top: 130px;
+    margin-left: 50px;
     // 文字跳动帧动画
     @keyframes fontjump {
         0% {

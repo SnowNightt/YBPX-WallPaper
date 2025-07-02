@@ -38,6 +38,11 @@ const routes = [
     path: '/sort',
     name: 'sort',
     component: () => import('@renderer/views/Sort.vue')
-  }
+  },
+  {
+    path: '/ai',
+    name: 'ai',
+    component: () => import('@renderer/views/AiChat.vue')
+  },
 ]
 export default routes

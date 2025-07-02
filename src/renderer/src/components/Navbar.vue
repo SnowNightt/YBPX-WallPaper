@@ -13,6 +13,8 @@
                 @click="$router.push({ name: 'like' })" :class="{ iconColor: $route.name == 'like' }" />
             <avatar theme="outline" size="30" class="ml-2 cursor-pointer" :strokeWidth="3"
                 :class="{ iconColor: $route.name == 'setting' }" @click="$router.push({ name: 'setting' })" />
+            <android theme="outline" size="30" class="ml-2 cursor-pointer" :strokeWidth="3"
+                :class="{ iconColor: $route.name == 'ai' }" @click="$router.push({ name: 'ai' })" />
             <preview-close theme="outline" size="28" fill="#333" :strokeWidth="4" class="ml-2 cursor-pointer" @click="miniSize"/>
             <power theme="outline" size="28" fill="#333" :strokeWidth="4" class="ml-2 cursor-pointer" @click="quit" />
         </nav>
@@ -21,7 +23,7 @@
 
 <script setup lang="ts">
 import Input from './Input.vue';
-import { Home, AllApplication, Star, Power, Avatar,BookmarkOne,PreviewClose } from '@icon-park/vue-next';
+import { Home, AllApplication, Star, Power, Avatar,BookmarkOne,PreviewClose,Android } from '@icon-park/vue-next';
 const quit = () => {
     window.api.quit()
 }

@@ -87,6 +87,7 @@ body {
 }
 
 .register-container {
+    height: auto !important;
     max-width: 1000px;
     width: 100%;
     border-radius: 12px;
