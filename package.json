@@ -22,11 +22,13 @@
     "build:ui": "pnpm --filter ./package/** run build"
   },
   "dependencies": {
+    "@coooookies/windows-smtc-monitor": "^1.0.12",
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
     "@icon-park/vue-next": "^1.4.2",
     "@types/node-fetch": "^2.6.11",
     "axios": "^1.6.8",
+    "date-fns": "^4.1.0",
     "electron-updater": "^6.1.7",
     "element-plus": "^2.7.0",
     "lucide-vue-next": "^0.507.0",
@@ -35,6 +37,7 @@
     "openai": "^4.97.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
+    "vite-plugin-optimizer": "^1.4.3",
     "vue-router": "^4.3.2",
     "vue3-lazyload": "^0.3.8",
     "wallpaper": "v5.0.1"
@@ -44,7 +47,7 @@
     "@electron-toolkit/eslint-config-ts": "^1.0.1",
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@rushstack/eslint-patch": "^1.7.1",
-    "@types/node": "^18.19.9",
+    "@types/node": "^18.19.31",
     "@vitejs/plugin-vue": "^5.0.3",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",

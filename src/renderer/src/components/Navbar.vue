@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import Input from './Input.vue';
-import { Home, AllApplication, Star, Power, Avatar,BookmarkOne,PreviewClose,Android } from '@icon-park/vue-next';
+import { Home, AllApplication, Star, Power, Avatar, PreviewClose, Android } from '@icon-park/vue-next';
 const quit = () => {
     window.api.quit()
 }

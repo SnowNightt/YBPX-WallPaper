@@ -13,7 +13,7 @@ import { getCollectImage } from '@renderer/plugin/api';
 import useConfigStore from '@renderer/store/index'
 // import { dataType } from '@renderer/store/type';
 import { getLocalStorage } from '@renderer/utils/localStorage';
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 const { config } = useConfigStore()
 const userId = getLocalStorage('userId')
 // const likeList = ref<any>(config.likeList)

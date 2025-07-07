@@ -1,4 +1,4 @@
-import { BrowserWindow, IpcMainEvent, Menu, app, ipcMain, ipcRenderer } from 'electron'
+import { BrowserWindow, IpcMainEvent, Menu, app, ipcMain } from 'electron'
 ipcMain.on('quit', (_event: IpcMainEvent) => {
   const template = [
     // {

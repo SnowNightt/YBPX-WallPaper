@@ -152,7 +152,7 @@ const initLine = (className: string) => {
         }
 
         function bindEvents(): void {
-            canvas.addEventListener('mouseout', (e: MouseEvent) => {
+            canvas.addEventListener('mouseout', (_e: MouseEvent) => {
                 if (interactionParticle) {
                     interactionParticle.x = NaN; // or any value that makes sense
                     interactionParticle.y = NaN; // to indicate no interaction

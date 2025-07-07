@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@coooookies/windows-smtc-monitor':
+        specifier: ^1.0.12
+        version: 1.0.12
       '@electron-toolkit/preload':
         specifier: ^3.0.0
         version: 3.0.1(electron@28.3.1)
@@ -23,6 +26,9 @@ importers:
       axios:
         specifier: ^1.6.8
         version: 1.6.8
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       electron-updater:
         specifier: ^6.1.7
         version: 6.1.8
@@ -47,6 +53,9 @@ importers:
       pinia-plugin-persistedstate:
         specifier: ^3.2.1
         version: 3.2.1(pinia@2.1.7)
+      vite-plugin-optimizer:
+        specifier: ^1.4.3
+        version: 1.4.3
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.23)
@@ -70,7 +79,7 @@ importers:
         specifier: ^1.7.1
         version: 1.10.2
       '@types/node':
-        specifier: ^18.19.9
+        specifier: ^18.19.31
         version: 18.19.31
       '@vitejs/plugin-vue':
         specifier: ^5.0.3
@@ -750,6 +759,42 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@coooookies/windows-smtc-monitor-win32-arm64-msvc@1.0.12:
+    resolution: {integrity: sha512-vokTNsUJ3UDWJGFboxIFzGjgyUY89cSySDrm0+Oat1ajBDfaJYCcBohN4K67NcjLfb1Auc06zKmmdlApH9ksjQ==}
+    engines: {node: '>=16.0.0'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@coooookies/windows-smtc-monitor-win32-ia32-msvc@1.0.12:
+    resolution: {integrity: sha512-iX25W+blahFGTE66pirN36Eq5DMlSrOUPeHkcAd8hB3YWhpHOK9OHXOhuaCIHUNCrfrb2pWOZfjIgpAJs7jyIQ==}
+    engines: {node: '>=16.0.0'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@coooookies/windows-smtc-monitor-win32-x64-msvc@1.0.12:
+    resolution: {integrity: sha512-Ktj3p8m/emw1GnptAFuOhoD680DPegLUrUaoOuHiT3obQTa5LCd+W93kSLn8N8C+DwrJsPBEIs0Kg7vUCWXDDw==}
+    engines: {node: '>=16.0.0'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@coooookies/windows-smtc-monitor@1.0.12:
+    resolution: {integrity: sha512-sIubsDCPsnFmR9T1anMgHBVfNxubXTt7mmv3X+ZJWPecwbWAGo41TI3iCzRChCpuLWpEMG3Zoo8n1m2/Hly+XQ==}
+    engines: {node: '>=16.0.0'}
+    optionalDependencies:
+      '@coooookies/windows-smtc-monitor-win32-arm64-msvc': 1.0.12
+      '@coooookies/windows-smtc-monitor-win32-ia32-msvc': 1.0.12
+      '@coooookies/windows-smtc-monitor-win32-x64-msvc': 1.0.12
+    dev: false
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -4237,6 +4282,10 @@ packages:
 
   /dataloader@1.4.0:
     resolution: {integrity: sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==}
+    dev: false
+
+  /date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
     dev: false
 
   /dayjs@1.11.10:
@@ -8961,6 +9010,10 @@ packages:
       extsprintf: 1.4.1
     dev: true
     optional: true
+
+  /vite-plugin-optimizer@1.4.3:
+    resolution: {integrity: sha512-m1AFakemDxSNIwxsTYykBFuQxkKJLI8207RNAg33N5km2aE29cP+Jt41xbfdrALOU2VKYWGFlBz64GMbIser4A==}
+    dev: false
 
   /vite@5.2.9(@types/node@18.19.31)(sass@1.75.0):
     resolution: {integrity: sha512-uOQWfuZBlc6Y3W/DTuQ1Sr+oIXWvqljLvS881SVmAj00d5RdgShLcuXWxseWPd4HXwiYBFW/vXHfKFeqj9uQnw==}

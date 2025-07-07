@@ -9,10 +9,15 @@
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
+    "types": ["node"],
     "paths": {
       "@renderer/*": [
         "src/renderer/src/*"
       ]
-    }
+    },
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "allowJs": true
   }
 }

@@ -1,5 +1,6 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
+import { join } from 'path'
 
 // Custom APIs for renderer
 const api = {
@@ -20,12 +21,16 @@ const api = {
   },
   miniSize: () => {
     ipcRenderer.send('minimize-window')
+  },
+  path: {
+    join: (...args: string[]) => join(...args)
   }
 }
 const logout = {
   ipcRenderer: {
-    send: (channel:any, data:any) => ipcRenderer.send(channel, data),
-    on: (channel:any, func:any) => ipcRenderer.on(channel, (_event, ...args) => func(...args))
+    send: (channel: string, data: unknown) => ipcRenderer.send(channel, data),
+    on: (channel: string, func: (...args: unknown[]) => void) => 
+      ipcRenderer.on(channel, (_event, ...args) => func(...args))
   }
 }
 // Use `contextBridge` APIs to expose Electron APIs to
